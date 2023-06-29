@@ -5,6 +5,7 @@ export default class HolbertonCourse {
     this.students = students;
   }
 
+  // eslint-disable-next-line no-underscore-dangle
   get name() {
     return this._name;
   }
