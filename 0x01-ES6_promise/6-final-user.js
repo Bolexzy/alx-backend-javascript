@@ -8,10 +8,14 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
     .then((results) => {
       const finalResult = [];
       results.forEach((result) => {
-        finalResult.push({
-          status: result.status,
-          value: result.value === 'undefined' ? `${result.reason}` : result.value,
-        });
+        if (result.status === 'fulfilled') {
+          finalResult.push(result);
+        } else {
+          finalResult.push({
+            status: result.status,
+            value: `Error: ${result.reason.message}`,
+          });
+        }
       });
       return finalResult;
     });
