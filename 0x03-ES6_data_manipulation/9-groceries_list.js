@@ -7,5 +7,5 @@ export default function groceriesList() {
   map.set('Rice', 1);
   map.set('Banana', 5);
 
-  return map
+  return map;
 }
