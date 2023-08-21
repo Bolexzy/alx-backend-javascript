@@ -1,4 +1,3 @@
-
 console.log('Welcome to Holberton School, what is your name?');
 
 const readline = require('readline');
