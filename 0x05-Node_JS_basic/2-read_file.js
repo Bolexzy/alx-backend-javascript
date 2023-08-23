@@ -13,7 +13,7 @@ function countStudents(path) {
         firstName: student[0],
         lastName: student[1],
         age: student[2],
-        field: student[3]
+        field: student[3],
       }));
 
     console.log(`Number of students: ${students.length}`);
@@ -22,7 +22,7 @@ function countStudents(path) {
       const fieldList = students
         .filter(student => student.field === field)
         .map(student => student.firstName);
-      console.log(`Number of students in ${field}: ${fieldList.length}. List: ${fieldList}`);
+      console.log(`Number of students in ${field}: ${fieldList.length}. List: ${fieldList.join(', ')}`);
     });
   } catch (error) {
     throw new Error('Cannot load the database');
