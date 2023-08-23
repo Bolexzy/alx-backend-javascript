@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-async function countStudents (path) {
+async function countStudents(path) {
   let data;
   try {
     data = await fs.promises.readFile(path, 'utf8');
@@ -8,13 +8,14 @@ async function countStudents (path) {
     throw new Error('Cannot load the database');
   }
   const students = data.split('\n')
-    .map((student) => student.split(','))
-    .filter((student) => student.length === 4 && student[0] !== 'firstname')
-    .map((student) => ({
+    .filter(line => line.trim() !== '')
+    .slice(1)
+    .map(student => student.split(','))
+    .map(student => ({
       firstName: student[0],
       lastName: student[1],
       age: student[2],
-      field: student[3]
+      field: student[3],
     }));
   const csStudents = students
     .filter((student) => student.field === 'CS')
