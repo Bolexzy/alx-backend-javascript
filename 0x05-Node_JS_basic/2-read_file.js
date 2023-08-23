@@ -24,7 +24,7 @@ function countStudents(path) {
         .map(student => student.firstName);
       console.log(`Number of students in ${field}: ${fieldList.length}. List: ${fieldList.join(', ')}`);
     });
-  } catch (error) {
+  } catch(error) {
     throw new Error('Cannot load the database');
   }
 }
