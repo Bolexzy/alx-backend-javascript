@@ -15,7 +15,7 @@ async function countStudents(path) {
       firstName: student[0],
       lastName: student[1],
       age: student[2],
-      field: student[3],
+      field: student[3]
     }));
   const csStudents = students
     .filter((student) => student.field === 'CS')
