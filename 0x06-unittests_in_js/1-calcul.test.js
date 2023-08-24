@@ -70,7 +70,7 @@ describe('Test Suite fot type-DIVIDE', function () {
     assert.equal(calculateNumber('DIVIDE', 4.2, 1.5), 2);
   });
   it("should return 'Error' when dividing 1.3 and 0.3", () => {
-    assert.equal(calculateNumber('DIVIDE', 1.3, 0.3), 'Infinity');
+    assert.equal(calculateNumber('DIVIDE', 1.3, 0.3), 'Error');
   });
   it('should return -1 when dividing -0.7 and 0.7', () => {
     assert.equal(calculateNumber('DIVIDE', -0.7, 0.7), -1);

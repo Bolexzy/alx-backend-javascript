@@ -9,6 +9,9 @@ function calculateNumber (type, a, b) {
     return a - b;
   }
   if (type === 'DIVIDE') {
+    if (b === 0) {
+      return 'Error';
+    }
     return a / b;
   }
 }
