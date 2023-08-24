@@ -1,12 +1,14 @@
-import express from 'express';
+import attachRoutes from './routes/index';
+
+const express = require('express');
 
 const app = express();
-const indexRouter = require('./routes/index');
 const port = 1245;
 
-app.listen(port);
-app.use('/', indexRouter);
-app.use('/students', indexRouter);
-app.use('/students/:major', indexRouter);
+attachRoutes(app);
+
+app.listen(port, () => {
+  console.log(`Listening port on ${port}`);
+});
 
 export default app;
