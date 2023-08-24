@@ -1,0 +1,16 @@
+function calculateNumber (type, a, b) {
+  a = Math.round(a);
+  b = Math.round(b);
+
+  if (type === 'SUM') {
+    return a + b;
+  }
+  if (type === 'SUBTRACT') {
+    return a - b;
+  }
+  if (type === 'DIVIDE') {
+    return a / b;
+  }
+}
+
+module.exports = calculateNumber;
